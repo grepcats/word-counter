@@ -8,61 +8,39 @@ namespace WordCounter.Tests
   {
     //test methodssss
     [TestMethod]
-    public void GetWord_FetchTheWord_String()
+    public void GetValues_FetchWordAndSentence_String()
     {
       //arrange
       string controlWord = "cat";
-      RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
-
-      //act
-      string result = newCounter.GetWord();
-
-      //assert
-      Assert.AreEqual(result, controlWord);
-    }
-
-    [TestMethod]
-    public void SetWord_SetTheWord_Void()
-    {
-      //arrange
-      string controlWord = "bat";
-      RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
-
-      //act
-      newCounter.SetWord(controlWord);
-
-      //assert
-      Assert.AreEqual(controlWord, newCounter.GetWord());
-    }
-
-    [TestMethod]
-    public void GetSentence_FetchTheSentence_String()
-    {
-      //arrange
       string controlSentence = "There is a cat over there. It is a big cat that I will pet.";
       RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
 
       //act
-      string result = newCounter.GetSentence();
+      string wordResult = newCounter.GetWord();
+      string sentenceResult = newCounter.GetSentence();
 
       //assert
-      Assert.AreEqual(result, controlSentence);
+      Assert.AreEqual(wordResult, controlWord);
+      Assert.AreEqual(sentenceResult, controlSentence);
     }
 
     [TestMethod]
-    public void SetSentence_SetTheSentence_Void()
+    public void SetValues_SetWordAndSentence_Void()
     {
-        //arrange
-        string newSentence = "There is a small cat over there.";
-        RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
+      //arrange
+      string newWord = "small";
+      string newSentence = "There is a small cat over there.";
+      RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
 
-        //act
-        newCounter.SetSentence(newSentence);
+      //act
+      newCounter.SetWord(newWord);
+      newCounter.SetSentence(newSentence);
 
-        //assert
-        Assert.AreEqual(newSentence, newCounter.GetSentence());
+      //assert
+      Assert.AreEqual(newWord, newCounter.GetWord());
+      Assert.AreEqual(newSentence, newCounter.GetSentence());
     }
-    
+
     [TestMethod]
     public void GetCount_GetTheCount_Int()
     {
