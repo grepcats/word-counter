@@ -141,21 +141,23 @@ namespace WordCounter.Tests
         //assert
         CollectionAssert.AreEqual(result, controlList);
     }
-    //
-    // [TestMethod]
-    // public void ClearAll_ClearAllRepeatCounters_void()
-    // {
-    //     //arrange
-    //     RepeatCounter catCounter = new RepeatCounter("cat", "the cat and the dog are great");
-    //     RepeatCounter dogCounter = new RepeatCounter("dog", "the cat and the dog are great");
-    //     RepeatCounter theCounter = new RepeatCounter("the", "the cat and the dog are great");
-    //     List<RepeatCounter> controlList = new List<RepeatCounter>{};
-    //
-    //     //act
-    //     RepeatCounter.ClearAll();
-    //
-    //     //assert
-    //     Assert.AreEqual(controlList, _counters);
-    // }
+
+    [TestMethod]
+    public void ClearAll_ClearAllRepeatCounters_void()
+    {
+        //arrange
+        RepeatCounter catCounter = new RepeatCounter("cat", "the cat and the dog are great");
+        RepeatCounter dogCounter = new RepeatCounter("dog", "the cat and the dog are great");
+        RepeatCounter theCounter = new RepeatCounter("the", "the cat and the dog are great");
+        int controlCount = 0;
+
+        //act
+        RepeatCounter.ClearAll();
+        List<RepeatCounter> controlList = RepeatCounter.GetAll();
+        int counterCount = controlList.Count;
+
+        //assert
+        Assert.AreEqual(controlCount, counterCount);
+    }
   }
 }
