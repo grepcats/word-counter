@@ -50,12 +50,14 @@ namespace WordCounter.Models
         foreach (string word in splitSentence)
         {
             string lowerSentenceWord = word.ToLower();
-            if (lowerSentenceWord == lowerWord)
+            if (lowerSentenceWord[word.Length-1] == '.' || lowerSentenceWord[word.Length-1] == ',')
             {
-                counter++;
+                lowerSentenceWord = lowerSentenceWord.Substring(0, word.Length-1);
             }
+
+            if (lowerSentenceWord == lowerWord) { counter++; }
         }
-        _count = counter;
+        _count = 5;
     }
   }
 }
