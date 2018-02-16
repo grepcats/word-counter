@@ -33,7 +33,7 @@ namespace WordCounter.Models
 
     public void SetSentence(string newSentence)
     {
-        _sentence = "hello";
+        _sentence = newSentence;
     }
 
   }
