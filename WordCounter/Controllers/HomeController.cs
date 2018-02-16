@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using WordCounter.Models;
 
 namespace WordCounter.Controllers
@@ -8,8 +9,8 @@ namespace WordCounter.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
-            RepeatCounter newCounter = new RepeatCounter("", "");
-            return View("Index", newCounter);
+            List<RepeatCounter> allCounters = RepeatCounter.GetAll();
+            return View("Index", allCounters);
         }
 
         [HttpPost("/count")]
@@ -20,7 +21,9 @@ namespace WordCounter.Controllers
             {
                 newCounter.SetCount();
             }
-            return View("Index", newCounter);
+
+            List<RepeatCounter> allCounters = RepeatCounter.GetAll();
+            return View("Index", allCounters);
         }
 
     }
