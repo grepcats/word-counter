@@ -18,6 +18,8 @@ namespace WordCounter.Controllers
         public ActionResult Count()
         {
             RepeatCounter.ClearAll();
+
+            //build list of word inputs
             int numInputs = Request.Form["word-input"].Count;
             List<string> wordInputs = new List<string>{};
             for (int i = 0; i < numInputs; i++) {
@@ -25,6 +27,7 @@ namespace WordCounter.Controllers
                 wordInputs.Add(newWord);
             }
 
+            //create RepeatCounter objects, check for validity & set counts
             foreach (string word in wordInputs)
             {
                 RepeatCounter newCounter = new RepeatCounter(word, Request.Form["sentence-input"]);

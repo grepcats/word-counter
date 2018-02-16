@@ -5,8 +5,8 @@ using System;
 
 namespace WordCounter.Models
 {
-  public class RepeatCounter
-  {
+    public class RepeatCounter
+    {
         private string _word;
         private string _sentence;
         private int _count;
@@ -34,6 +34,10 @@ namespace WordCounter.Models
     public int GetCount() { return _count; }
 
     public string GetMessage() { return _message; }
+
+    public static List<RepeatCounter> GetAll() { return _counters; }
+
+    public static void ClearAll() { _counters.Clear(); }
 
     public bool IsValid()
     {
@@ -74,13 +78,5 @@ namespace WordCounter.Models
         _count = counter;
     }
 
-    public static List<RepeatCounter> GetAll()
-    {
-        return _counters;
     }
-
-    public static void ClearAll() {
-        _counters.Clear();
-    }
-  }
 }

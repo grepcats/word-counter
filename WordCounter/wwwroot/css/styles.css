@@ -3,6 +3,21 @@ body {
     background-color: #C6C5B9;
 }
 
+.container {
+    background-color: #62929E;
+}
+
+label {
+    color: #393D3F;
+    font-size: 1.5em;
+}
+
+.jumbotron {
+    background-color: #393D3F;
+    color: #C6C5B9;
+    text-align: center;
+}
+
 #add {
     margin-bottom: 10px;
 }
@@ -30,26 +45,8 @@ body {
     margin-bottom: 0px;
 }
 
-
-.container {
-    background-color: #62929E;
-}
-
-label {
-    color: #393D3F;
-    font-size: 1.5em;
-}
-
-.jumbotron {
-    background-color: #393D3F;
-    color: #C6C5B9;
-    text-align: center;
-}
-
 @media all and (max-width: 600px) {
     .panel {
         width: 100%;
     }
-}
-
 }

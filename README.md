@@ -1,3 +1,10 @@
+# Word Counter
+
+#### _An app to count words in a text string, 2/16/2018_
+
+## Description
+This is a C#/ASP.NET app that will take user-provided words and count the number of instances in another user-provided text string. User may submit multiple words in separate fields.
+
 ## Specs
 * Program should take a word as input
   * Input: "cat"
@@ -39,5 +46,27 @@
     * Input: "cat"; "dog"; "the"; "the cat and the dog are great"
     * Output: cat: 1; dog: 1; the: 2;
     * This changes the structure of the program somewhat. Adding GetAll() and ClearAll() methods, as well as a static list. It will also change the form and the object passed to the Index page.
+
+## Setup/Installation instructions
+In terminal,
+* git clone https://github.com/grepcats/word-counter to Desktop
+* navigate to "WordCounter" folder one level down
+* run "dotnet restore" in project folder to load dependencies
+* run "dotnet build" to build project and its dependencies into a set of binaries
+* run "dotnet run" to run the project
+
+Open web browser and navigate to http://localhost:5000. Program will run as long as it is running in the terminal.
+
+## Known Bugs
+No known bugs at this time. Please report any bugs by opening a GitHub issue.
+
+## Support and Contact Details
+If there are any issues or questions, please contact me at kayla.renee at gmail dot com or create an issue in GitHub.
+
+## Technologies Used
+C#/ASP.NET Core, jQuery.
+
+## License
+Copyright (c) 2018 **Kayla Ondracek**
 
 #### Color combo generated at https://coolors.co/393d3f-fdfdff-c6c5b9-62929e-546a7b
