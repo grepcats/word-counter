@@ -15,7 +15,7 @@ namespace WordCounter.Models
         _word = word;
         _sentence = sentence;
         _count = 0;
-        _message = "Please enter a single word. Multiple-word inputs are not valid.";
+        _message = "";
     }
 
     public string GetWord()
@@ -50,7 +50,16 @@ namespace WordCounter.Models
 
     public bool IsValid()
     {
-        if (_word == "" || _sentence == "" || _word.Contains(" ")) { return false; }
+        if (_word == "" || _sentence == "")
+        {
+            _message = "The program can't search on blank entries! Please try again.";
+            return false;
+        }
+        if (_word.Contains(" "))
+        {
+            _message = "Please enter a single word. Multiple-word inputs are not valid.";
+            return false;
+        }
         else { return true; }
     }
 

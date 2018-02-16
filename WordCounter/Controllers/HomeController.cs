@@ -20,11 +20,6 @@ namespace WordCounter.Controllers
             {
                 newCounter.SetCount();
             }
-            else
-            {
-                newCounter.SetWord("");
-                newCounter.SetSentence("");
-            }
             return View("Index", newCounter);
         }
 

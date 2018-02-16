@@ -21,11 +21,11 @@
                 <button type="submit" class="btn btn-default">Count</button>
             </form>
             <div class="output">
-                @if (Model.GetWord() == "")
+                @if (Model.GetMessage() != "")
                 {
-                    <p>Please enter a word and a string of words to find that word in.</p>
+                    <p>@Model.GetMessage()</p>
                 }
-                else
+                else if (Model.GetWord() != "")
                 {
                     <p>The word "@Model.GetWord()" appears @Model.GetCount() times in this string of words!</p>
                 }
