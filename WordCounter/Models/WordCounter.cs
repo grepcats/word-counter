@@ -24,7 +24,7 @@ namespace WordCounter.Models
 
     public void SetWord(string newWord)
     {
-      _word = "hello";
+      _word = newWord;
     }
 
   }
