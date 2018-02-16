@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using WordCounter.Models;
 using WordCounter.Controllers;
 
@@ -32,7 +33,7 @@ namespace WordCounter.Tests
             var result = indexView.ViewData.Model;
 
             //assert
-            Assert.IsInstanceOfType(result, typeof(RepeatCounter));
+            Assert.IsInstanceOfType(result, typeof(List<RepeatCounter>));
         }
     }
 }
