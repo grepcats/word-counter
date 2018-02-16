@@ -57,7 +57,7 @@ namespace WordCounter.Models
 
             if (lowerSentenceWord == lowerWord) { counter++; }
         }
-        _count = 5;
+        _count = counter;
     }
   }
 }
