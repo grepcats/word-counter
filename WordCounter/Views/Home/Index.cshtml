@@ -16,23 +16,20 @@
                 <p>Please enter a word and a string of text to begin!</p>
             </div>
             <form method="post" action="/count" id="count">
-                <div class="form-group">
-                    <label for="word-input1">Word1</label>
-                    <input type="text" name="word-input1" class="form-control">
+                <div class="word-inputs">
+                    <div class="form-group">
+                        <label for="word-input">Word</label>
+                        <input type="text" name="word-input" class="form-control">
+                    </div>
+
                 </div>
-                <div class="form-group">
-                    <label for="word-input2">Word2</label>
-                    <input type="text" name="word-input2" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="word-input3">Word3</label>
-                    <input type="text" name="word-input3" class="form-control">
-                </div>
+                <span id="add" class="btn btn-default btn-sm">Add another word</span>
+
                 <div class="form-group">
                     <label for="sentence-input">Text string</label>
-                    <textarea name="sentence-input" class="form-control" rows="5">@Model[0].GetSentence()</textarea>
+                    <textarea name="sentence-input" class="form-control" rows="5">@if (Model.Count > 0) { Model[0].GetSentence(); }</textarea>
                 </div>
-                <button type="submit" class="btn btn-default">Count</button>
+                <button type="submit" class="btn btn-default count">Count</button>
             </form>
             <div class="output">
                 @foreach (var counter in Model)

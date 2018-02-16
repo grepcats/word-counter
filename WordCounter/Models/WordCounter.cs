@@ -37,14 +37,18 @@ namespace WordCounter.Models
 
     public bool IsValid()
     {
-        if (_word == "" || _sentence == "")
+        if (_sentence == "")
         {
-            _message = "The program can't search on blank entries! Please try again.";
+            _message = "You left the text string blank. Please enter a string.";
             return false;
+        }
+        if (_word == "")
+        {
+            _message = "You left this word blank!";
         }
         if (_word.Contains(" "))
         {
-            _message = "Please enter a single word. Multiple-word inputs are not valid.";
+            _message = "Please enter one word per Word Box! Click 'Add another word' to count more words";
             return false;
         }
         else { return true; }

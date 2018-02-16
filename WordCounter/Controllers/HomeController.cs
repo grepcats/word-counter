@@ -18,20 +18,23 @@ namespace WordCounter.Controllers
         public ActionResult Count()
         {
             RepeatCounter.ClearAll();
-            RepeatCounter newCounter1 = new RepeatCounter(Request.Form["word-input1"], Request.Form["sentence-input"]);
-            RepeatCounter newCounter2 = new RepeatCounter(Request.Form["word-input2"], Request.Form["sentence-input"]);
-            RepeatCounter newCounter3 = new RepeatCounter(Request.Form["word-input3"], Request.Form["sentence-input"]);
-            List<RepeatCounter> allCounters = RepeatCounter.GetAll();
-            Console.WriteLine(allCounters.Count);
-            foreach (RepeatCounter counter in allCounters)
+            int numInputs = Request.Form["word-input"].Count;
+            List<string> wordInputs = new List<string>{};
+            for (int i = 0; i < numInputs; i++) {
+                string newWord = Request.Form["word-input"][i];
+                wordInputs.Add(newWord);
+            }
+
+            foreach (string word in wordInputs)
             {
-                Console.WriteLine(counter.GetWord());
-                if (counter.IsValid())
+                RepeatCounter newCounter = new RepeatCounter(word, Request.Form["sentence-input"]);
+                if (newCounter.IsValid())
                 {
-                    counter.SetCount();
+                    newCounter.SetCount();
                 }
             }
 
+            List<RepeatCounter> allCounters = RepeatCounter.GetAll();
             return View("Index", allCounters);
         }
 

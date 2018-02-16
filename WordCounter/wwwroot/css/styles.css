@@ -1,3 +1,18 @@
+body {
+    color: #393D3F;
+    background-color: #C6C5B9;
+}
+
+#add {
+    margin-bottom: 10px;
+}
+
+.count {
+    font-size: 30px;
+}
+.output {
+    margin-top: 20px;
+}
 
 .panel {
     background-color: #C6C5B9;
@@ -15,10 +30,6 @@
     margin-bottom: 0px;
 }
 
-body {
-    color: #393D3F;
-    background-color: #C6C5B9;
-}
 
 .container {
     background-color: #62929E;
