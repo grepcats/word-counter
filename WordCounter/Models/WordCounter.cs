@@ -13,7 +13,7 @@ namespace WordCounter.Models
     {
         _word = word;
         _sentence = sentence;
-        _count = 2;
+        _count = 0;
     }
 
     public string GetWord()
@@ -43,8 +43,17 @@ namespace WordCounter.Models
 
     public void SetCount()
     {
+        string[] splitSentence = _sentence.Split(' ');
+        int counter = 0;
 
-        _count = 55;
+        foreach (string word in splitSentence)
+        {
+            if (word == _word)
+            {
+                counter++;
+            }
+        }
+        _count = counter;
     }
   }
 }

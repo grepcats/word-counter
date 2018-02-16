@@ -69,6 +69,7 @@ namespace WordCounter.Tests
         //arrange
         int controlCount = 2;
         RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
+        newCounter.SetCount();
 
         //act
         int result = newCounter.GetCount();
