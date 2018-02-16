@@ -78,31 +78,45 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void IsEmpty_CheckForEmptyValues_False()
+    public void IsValid_CheckForValidity_True()
     {
         //arrange
-        bool controlEmpty = false;
+        bool controlEmpty = true;
         RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there.");
 
         //act
-        bool result = newCounter.IsEmpty();
+        bool result = newCounter.IsValid();
 
         //assert
         Assert.AreEqual(controlEmpty, result);
     }
 
     [TestMethod]
-    public void IsEmpty_CheckForEmptyValues_True()
+    public void IsValid_CheckForValidity_False()
     {
         //arrange
-        bool controlEmpty = true;
+        bool controlEmpty = false;
         RepeatCounter newCounter = new RepeatCounter("", "There is a cat over there.");
 
         //act
-        bool result = newCounter.IsEmpty();
+        bool result = newCounter.IsValid();
 
         //assert
         Assert.AreEqual(controlEmpty, result);
+    }
+
+    [TestMethod]
+    public void GetMessage_FetchTheMessage_String()
+    {
+        //arrange
+        string controlMessage = "Please enter a single word. Multiple-word inputs are not valid.";
+        RepeatCounter newCounter = new RepeatCounter("", "There is a cat over there.");
+
+        //act
+        string result = newCounter.GetMessage();
+
+        //assert
+        Assert.AreEqual(result, controlMessage);
     }
   }
 }

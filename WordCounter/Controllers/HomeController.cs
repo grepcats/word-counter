@@ -16,14 +16,14 @@ namespace WordCounter.Controllers
         public ActionResult Count()
         {
             RepeatCounter newCounter = new RepeatCounter(Request.Form["word-input"], Request.Form["sentence-input"]);
-            if (newCounter.IsEmpty())
+            if (newCounter.IsValid())
             {
-                newCounter.SetWord("");
-                newCounter.SetSentence("");
+                newCounter.SetCount();
             }
             else
             {
-                newCounter.SetCount();
+                newCounter.SetWord("");
+                newCounter.SetSentence("");
             }
             return View("Index", newCounter);
         }

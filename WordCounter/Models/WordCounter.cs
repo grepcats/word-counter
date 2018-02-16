@@ -8,12 +8,14 @@ namespace WordCounter.Models
         private string _word;
         private string _sentence;
         private int _count;
+        private string _message;
 
     public RepeatCounter(string word, string sentence)
     {
         _word = word;
         _sentence = sentence;
         _count = 0;
+        _message = "Please enter a single word. Multiple-word inputs are not valid.";
     }
 
     public string GetWord()
@@ -41,10 +43,15 @@ namespace WordCounter.Models
         return _count;
     }
 
-    public bool IsEmpty()
+    public string GetMessage()
     {
-        if (_word == "" || _sentence == "") { return true; }
-        else { return false; }
+        return "hello";
+    }
+
+    public bool IsValid()
+    {
+        if (_word == "" || _sentence == "" || _word.Contains(" ")) { return false; }
+        else { return true; }
     }
 
     public void SetCount()
