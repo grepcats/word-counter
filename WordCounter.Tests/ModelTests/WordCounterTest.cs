@@ -8,66 +8,45 @@ namespace WordCounter.Tests
   {
     //test methodssss
     [TestMethod]
-    public void GetValues_FetchWordAndSentence_String()
+    public void GetValues_FetchWordSentenceAndCount_String()
     {
       //arrange
       string controlWord = "cat";
       string controlSentence = "There is a cat over there. It is a big cat that I will pet.";
+      int controlCount = 2;
       RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
+      newCounter.SetCount();
 
       //act
       string wordResult = newCounter.GetWord();
       string sentenceResult = newCounter.GetSentence();
+      int countResult = newCounter.GetCount();
 
       //assert
       Assert.AreEqual(wordResult, controlWord);
       Assert.AreEqual(sentenceResult, controlSentence);
+      Assert.AreEqual(countResult, controlCount);
     }
 
+
     [TestMethod]
-    public void SetValues_SetWordAndSentence_Void()
+    public void SetValues_SetWordSentenceAndCount_Void()
     {
       //arrange
       string newWord = "small";
       string newSentence = "There is a small cat over there.";
+      int newCount = 1;
       RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
 
       //act
       newCounter.SetWord(newWord);
       newCounter.SetSentence(newSentence);
+      newCounter.SetCount();
 
       //assert
       Assert.AreEqual(newWord, newCounter.GetWord());
       Assert.AreEqual(newSentence, newCounter.GetSentence());
-    }
-
-    [TestMethod]
-    public void GetCount_GetTheCount_Int()
-    {
-        //arrange
-        int controlCount = 2;
-        RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
-        newCounter.SetCount();
-
-        //act
-        int result = newCounter.GetCount();
-
-        //assert
-        Assert.AreEqual(result, controlCount);
-    }
-
-    [TestMethod]
-    public void SetCount_SetTheCount_Void()
-    {
-        //arrange
-        int controlCount = 2;
-        RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
-
-        //act
-        newCounter.SetCount();
-
-        //assert
-        Assert.AreEqual(controlCount, newCounter.GetCount());
+      Assert.AreEqual(newCount, newCounter.GetCount());
     }
 
     [TestMethod]

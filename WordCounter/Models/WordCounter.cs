@@ -43,14 +43,8 @@ namespace WordCounter.Models
 
     public bool IsEmpty()
     {
-        if (_word == "" || _sentence == "")
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        if (_word == "" || _sentence == "") { return true; }
+        else { return false; }
     }
 
     public void SetCount()
