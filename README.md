@@ -29,10 +29,12 @@
   * Output: 2
   * Program should be able to take the word input and identify it in the sentence input regardless of punctuation in the input sentence. This is an appropriate test because it includes punctuation in the sentence input that has the potential for non-matches.
 
----Added later
+---Tests & Methods for these added after development began
 * Program should convey message to user if they have entered non-conforming entries like multiple words in word input
   * Input: "cat cat cat", "There is a CaT over there. It is a big cat."
   * Output: "Please enter a single word"
-  * Because program is looking for matches on single words in the sentence array, a "word" entry that is multiple words (like the input above) will always fail. The program should let the user know this is happening.
+  * Because program is looking for matches on single words in the sentence array, a "word" entry that is multiple words (like the input above) will always fail. The program should let the user know this is happening. Message setting functionality was added to the IsValid method.
+
+
 
 #### Color combo generated at https://coolors.co/393d3f-fdfdff-c6c5b9-62929e-546a7b

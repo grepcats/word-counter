@@ -18,35 +18,17 @@ namespace WordCounter.Models
         _message = "";
     }
 
-    public string GetWord()
-    {
-        return _word;
-    }
+    public string GetWord() { return _word; }
 
-    public void SetWord(string newWord)
-    {
-        _word = newWord;
-    }
+    public void SetWord(string newWord) { _word = newWord; }
 
-    public string GetSentence()
-    {
-        return _sentence;
-    }
+    public string GetSentence() { return _sentence; }
 
-    public void SetSentence(string newSentence)
-    {
-        _sentence = newSentence;
-    }
+    public void SetSentence(string newSentence) { _sentence = newSentence; }
 
-    public int GetCount()
-    {
-        return _count;
-    }
+    public int GetCount() { return _count; }
 
-    public string GetMessage()
-    {
-        return _message;
-    }
+    public string GetMessage() { return _message; }
 
     public bool IsValid()
     {
@@ -72,7 +54,8 @@ namespace WordCounter.Models
         foreach (string word in splitSentence)
         {
             string lowerSentenceWord = word.ToLower();
-            if (lowerSentenceWord[word.Length-1] == '.' || lowerSentenceWord[word.Length-1] == ',')
+
+            if (lowerSentenceWord[word.Length-1] == '.' || lowerSentenceWord[word.Length-1] == ',' || lowerSentenceWord[word.Length-1] == '?' || lowerSentenceWord[word.Length-1] == '!')
             {
                 lowerSentenceWord = lowerSentenceWord.Substring(0, word.Length-1);
             }

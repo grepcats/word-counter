@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="~/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="~/css/styles.css">
+        <script src="~/js/jquery-3.3.1.js"></script>
+        <script src="~/js/scripts.js"></script>
         <title>Word Counter</title>
     </head>
     <body>
@@ -13,25 +15,30 @@
                 <h1>Word Counter</h1>
                 <p>Please enter a word and a string of text to begin!</p>
             </div>
-            <form method="post" action="/count">
+            <form method="post" action="/count" id="count">
                 <div class="form-group">
                     <label for="word-input">Word</label>
-                    <input type="text" name="word-input" class="form-control">
+                    <input type="text" name="word-input" class="form-control" value="@Model.GetWord()">
                 </div>
                 <div class="form-group">
                     <label for="sentence-input">Text string</label>
-                    <textarea name="sentence-input" class="form-control" rows="5"></textarea>
+                    <textarea name="sentence-input" class="form-control" rows="5">@Model.GetSentence()</textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Count</button>
             </form>
-            <div class="output panel">
+            <div class="output">
+
                 @if (Model.GetMessage() != "")
                 {
-                    <p class="display">@Model.GetMessage()</p>
+                    <div class="panel">
+                        <p class="display">@Model.GetMessage()</p>
+                    </div>
                 }
                 else if (Model.GetWord() != "")
                 {
-                    <p class="display">The word "@Model.GetWord()" appears @Model.GetCount() time(s) in this string of words!</p>
+                    <div class="panel">
+                        <p class="display">The word "@Model.GetWord()" appears @Model.GetCount() time(s) in this string of words!</p>
+                    </div>
                 }
             </div>
 
