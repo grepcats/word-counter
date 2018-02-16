@@ -50,7 +50,7 @@ namespace WordCounter.Models
         foreach (string word in splitSentence)
         {
             string lowerSentenceWord = word.ToLower();
-            if (word == _word)
+            if (lowerSentenceWord == lowerWord)
             {
                 counter++;
             }
