@@ -7,6 +7,18 @@ namespace WordCounter.Tests
   public class RepeatCounterTest
   {
     //test methodssss
-    // [TestMethod]
+    [TestMethod]
+    public void GetWord_FetchTheWord_String()
+    {
+      //arrange
+      string controlWord = "cat";
+      RepeatCounter newCounter = new RepeatCounter("cat");
+
+      //act
+      string result = newCounter.GetWord();
+
+      //assert
+      Assert.AreEqual(result, controlWord);
+    }
   }
 }
