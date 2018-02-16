@@ -1,4 +1,6 @@
-.output {
+
+.panel {
+    background-color: #C6C5B9;
     font-size: 2em;
     color: #393D3F;
     margin: auto;
@@ -7,9 +9,7 @@
     padding: 10px;
     width: 75%;
     text-align: center;
-    background-color: #C6C5B9;
 }
-
 
 .display {
     margin-bottom: 0px;
@@ -36,7 +36,7 @@ label {
 }
 
 @media all and (max-width: 600px) {
-    .output {
+    .panel {
         width: 100%;
     }
 }

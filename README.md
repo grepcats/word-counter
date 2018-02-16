@@ -35,6 +35,9 @@
   * Output: "Please enter a single word"
   * Because program is looking for matches on single words in the sentence array, a "word" entry that is multiple words (like the input above) will always fail. The program should let the user know this is happening. Message setting functionality was added to the IsValid method.
 
-
+* Program should offer users the option to enter multiple words to count
+    * Input: "cat"; "dog"; "the"; "the cat and the dog are great"
+    * Output: cat: 1; dog: 1; the: 2;
+    * This changes the structure of the program somewhat. Adding GetAll() and ClearAll() methods, as well as a static list. It will also change the form and the object passed to the Index page.
 
 #### Color combo generated at https://coolors.co/393d3f-fdfdff-c6c5b9-62929e-546a7b

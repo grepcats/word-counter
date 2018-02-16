@@ -10,12 +10,17 @@ namespace WordCounter.Models
         private int _count;
         private string _message;
 
+        private static List<RepeatCounter> _counters = new List<RepeatCounter>{};
+
     public RepeatCounter(string word, string sentence)
     {
         _word = word;
         _sentence = sentence;
         _count = 0;
         _message = "";
+        _counters.Add(this);
+        _counters = new List<RepeatCounter>;
+
     }
 
     public string GetWord() { return _word; }
