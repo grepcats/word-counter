@@ -41,6 +41,11 @@ namespace WordCounter.Models
         return _count;
     }
 
+    public bool IsEmpty()
+    {
+        return true;
+    }
+
     public void SetCount()
     {
         string[] splitSentence = _sentence.Split(' ');

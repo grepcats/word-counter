@@ -97,5 +97,19 @@ namespace WordCounter.Tests
         //assert
         Assert.AreEqual(controlCount, newCounter.GetCount());
     }
+
+    [TestMethod]
+    public void IsEmpty_CheckForEmptyValues_False()
+    {
+        //arrange
+        bool controlEmpty = false;
+        RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there.");
+
+        //act
+        bool result = newCounter.IsEmpty();
+
+        //assert
+        Assert.AreEqual(controlEmpty, result);
+    }
   }
 }
