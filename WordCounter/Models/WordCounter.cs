@@ -44,10 +44,12 @@ namespace WordCounter.Models
     public void SetCount()
     {
         string[] splitSentence = _sentence.Split(' ');
+        string lowerWord = _word.ToLower();
         int counter = 0;
 
         foreach (string word in splitSentence)
         {
+            string lowerSentenceWord = word.ToLower();
             if (word == _word)
             {
                 counter++;

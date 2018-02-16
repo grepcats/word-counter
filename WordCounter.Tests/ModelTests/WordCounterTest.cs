@@ -91,5 +91,19 @@ namespace WordCounter.Tests
         //assert
         Assert.AreEqual(controlCount, newCounter.GetCount());
     }
+
+    [TestMethod]
+    public void SetCount_HandleCase_Void()
+    {
+        //arrange
+        int controlCount = 2;
+        RepeatCounter newCounter = new RepeatCounter("cat", "There is a Cat over there. It is a big cat that I will pet.");
+
+        //act
+        newCounter.SetCount();
+
+        //assert
+        Assert.AreEqual(controlCount, newCounter.GetCount());
+    }
   }
 }
