@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WordCounter.Models;
 using System.Collections.Generic;
+using System;
 
 namespace WordCounter.Models
 {
@@ -71,11 +72,16 @@ namespace WordCounter.Models
 
     public static List<RepeatCounter> GetAll()
     {
-        RepeatCounter catCounter = new RepeatCounter("cat", "the cat and the dog are great");
-        List<RepeatCounter> testList = new List<RepeatCounter>{catCounter};
-        return testList;
+        foreach (RepeatCounter counter in _counters)
+        {
+            Console.WriteLine(counter.GetWord());
+        }
+        List<RepeatCounter> fakeList = new List<RepeatCounter>{};
+        return fakeList;
     }
-    //public static List<RepeatCounter> GetAll()
-    //public static void ClearAll() _counters.Clear();
+
+    public static void ClearAll() {
+        _counters.Clear();
+    }
   }
 }

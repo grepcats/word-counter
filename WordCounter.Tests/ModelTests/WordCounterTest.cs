@@ -1,13 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using WordCounter.Models;
+using System;
 
 namespace WordCounter.Tests
 {
   [TestClass]
-  public class RepeatCounterTest
+  public class RepeatCounterTest : IDisposable
   {
-    //test methodssss
+    public void Dispose()
+    {
+        RepeatCounter.ClearAll();
+    }
+
     [TestMethod]
     public void GetValues_FetchWordSentenceAndCount_String()
     {
@@ -136,5 +141,21 @@ namespace WordCounter.Tests
         //assert
         Assert.AreEqual(result, controlList);
     }
+    //
+    // [TestMethod]
+    // public void ClearAll_ClearAllRepeatCounters_void()
+    // {
+    //     //arrange
+    //     RepeatCounter catCounter = new RepeatCounter("cat", "the cat and the dog are great");
+    //     RepeatCounter dogCounter = new RepeatCounter("dog", "the cat and the dog are great");
+    //     RepeatCounter theCounter = new RepeatCounter("the", "the cat and the dog are great");
+    //     List<RepeatCounter> controlList = new List<RepeatCounter>{};
+    //
+    //     //act
+    //     RepeatCounter.ClearAll();
+    //
+    //     //assert
+    //     Assert.AreEqual(controlList, _counters);
+    // }
   }
 }
