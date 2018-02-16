@@ -47,6 +47,20 @@ namespace WordCounter.Tests
 
       //assert
       Assert.AreEqual(result, controlSentence);
+    }
+
+    [TestMethod]
+    public void SetSentence_SetTheSentence_Void()
+    {
+        //arrange
+        string newSentence = "There is a small cat over there.";
+        RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
+
+        //act
+        newCounter.SetSentence(newSentence);
+
+        //assert
+        Assert.AreEqual(newSentence, newCounter.GetSentence());
 
     }
   }
