@@ -8,7 +8,8 @@ namespace WordCounter.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
-            return View();
+            RepeatCounter newCounter = new RepeatCounter("", "");
+            return View("Index", newCounter);
         }
 
     }
