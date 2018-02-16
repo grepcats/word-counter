@@ -15,12 +15,22 @@
                 </div>
                 <div class="form-group">
                     <label for="sentence-input">Enter a chunk of text you'd like to find that word in</label>
-                    <textarea name="sentence-input" class="form-control">
+                    <textarea name="sentence-input" class="form-control" rows="5"></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Count</button>
             </form>
+            <div class="output">
+                @if (Model.GetWord() == "")
+                {
+                    <p>Please enter a word and a string of words to find that word in.</p>
+                }
+                else
+                {
+                    <p>The word "@Model.GetWord()" appears @Model.GetCount() times in this string of words!</p>
+                }
+            </div>
 
-            
+
         </div>
 
     </body>
