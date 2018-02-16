@@ -36,5 +36,10 @@ namespace WordCounter.Models
         _sentence = newSentence;
     }
 
+    public int GetCount()
+    {
+        return 8;
+    }
+
   }
 }

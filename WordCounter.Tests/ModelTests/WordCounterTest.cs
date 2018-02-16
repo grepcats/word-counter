@@ -61,7 +61,20 @@ namespace WordCounter.Tests
 
         //assert
         Assert.AreEqual(newSentence, newCounter.GetSentence());
+    }
 
+    [TestMethod]
+    public void GetCount_GetTheCount_Int()
+    {
+        //arrange
+        int controlCount = 2;
+        RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
+
+        //act
+        int result = newCounter.GetCount();
+
+        //assert
+        Assert.AreEqual(result, controlCount);
     }
   }
 }
