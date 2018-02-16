@@ -72,12 +72,7 @@ namespace WordCounter.Models
 
     public static List<RepeatCounter> GetAll()
     {
-        foreach (RepeatCounter counter in _counters)
-        {
-            Console.WriteLine(counter.GetWord());
-        }
-        List<RepeatCounter> fakeList = new List<RepeatCounter>{};
-        return fakeList;
+        return _counters;
     }
 
     public static void ClearAll() {

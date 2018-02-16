@@ -139,7 +139,7 @@ namespace WordCounter.Tests
         List<RepeatCounter> result = RepeatCounter.GetAll();
 
         //assert
-        Assert.AreEqual(result, controlList);
+        CollectionAssert.AreEqual(result, controlList);
     }
     //
     // [TestMethod]
