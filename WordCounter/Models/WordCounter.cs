@@ -28,7 +28,7 @@ namespace WordCounter.Models
 
     public string GetSentence()
     {
-      return "hello";
+      return _sentence;
     }
 
   }
