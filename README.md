@@ -34,3 +34,5 @@
   * Input: "cat cat cat", "There is a CaT over there. It is a big cat."
   * Output: "Please enter a single word"
   * Because program is looking for matches on single words in the sentence array, a "word" entry that is multiple words (like the input above) will always fail. The program should let the user know this is happening.
+
+#### Color combo generated at https://coolors.co/393d3f-fdfdff-c6c5b9-62929e-546a7b

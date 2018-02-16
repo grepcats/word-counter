@@ -2,32 +2,36 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
         <title>Word Counter</title>
     </head>
     <body>
         <div class="container">
-            <h1>Word Counter</h1>
+            <div class="jumbotron">
+                <h1>Word Counter</h1>
+                <p>Please enter a word and a string of text to begin!</p>
+            </div>
             <form method="post" action="/count">
                 <div class="form-group">
-                    <label for="word-input">Enter a word you'd like to count</label>
+                    <label for="word-input">Word</label>
                     <input type="text" name="word-input" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="sentence-input">Enter a chunk of text you'd like to find that word in</label>
+                    <label for="sentence-input">Text string</label>
                     <textarea name="sentence-input" class="form-control" rows="5"></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Count</button>
             </form>
-            <div class="output">
+            <div class="output panel">
                 @if (Model.GetMessage() != "")
                 {
-                    <p>@Model.GetMessage()</p>
+                    <p class="display">@Model.GetMessage()</p>
                 }
                 else if (Model.GetWord() != "")
                 {
-                    <p>The word "@Model.GetWord()" appears @Model.GetCount() times in this string of words!</p>
+                    <p class="display">The word "@Model.GetWord()" appears @Model.GetCount() time(s) in this string of words!</p>
                 }
             </div>
 

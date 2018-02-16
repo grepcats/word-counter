@@ -1,0 +1,43 @@
+.output {
+    font-size: 2em;
+    color: #393D3F;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 75%;
+    text-align: center;
+    background-color: #C6C5B9;
+}
+
+.display {
+    margin-bottom: 0px;
+}
+
+body {
+    color: #393D3F;
+    background-color: #C6C5B9;
+}
+
+.container {
+    background-color: #62929E;
+}
+
+label {
+    color: #393D3F;
+    font-size: 1.5em;
+}
+
+.jumbotron {
+    background-color: #393D3F;
+    color: #C6C5B9;
+    text-align: center;
+}
+
+@media all and (max-width: 600px) {
+    .output {
+        width: 100%;
+    }
+}
+
+}
