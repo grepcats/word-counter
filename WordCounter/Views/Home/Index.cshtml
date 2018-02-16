@@ -17,29 +17,41 @@
             </div>
             <form method="post" action="/count" id="count">
                 <div class="form-group">
-                    <label for="word-input">Word</label>
-                    <input type="text" name="word-input" class="form-control" value="@Model.GetWord()">
+                    <label for="word-input1">Word1</label>
+                    <input type="text" name="word-input1" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="word-input2">Word2</label>
+                    <input type="text" name="word-input2" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="word-input3">Word3</label>
+                    <input type="text" name="word-input3" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="sentence-input">Text string</label>
-                    <textarea name="sentence-input" class="form-control" rows="5">@Model.GetSentence()</textarea>
+                    <textarea name="sentence-input" class="form-control" rows="5">@Model[0].GetSentence()</textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Count</button>
             </form>
             <div class="output">
+                @foreach (var counter in Model)
+                {
+                    if (@counter.GetMessage() != "")
+                    {
+                        <div class="panel">
+                            <p class="display">@counter.GetMessage()</p>
+                        </div>
+                    }
+                    else if (@counter.GetWord() != "")
+                    {
+                        <div class="panel">
+                            <p class="display">The word "@counter.GetWord()" appears @counter.GetCount() time(s) in this string of words!</p>
+                        </div>
+                    }
+                }
 
-                @if (Model.GetMessage() != "")
-                {
-                    <div class="panel">
-                        <p class="display">@Model.GetMessage()</p>
-                    </div>
-                }
-                else if (Model.GetWord() != "")
-                {
-                    <div class="panel">
-                        <p class="display">The word "@Model.GetWord()" appears @Model.GetCount() time(s) in this string of words!</p>
-                    </div>
-                }
+
             </div>
 
 
