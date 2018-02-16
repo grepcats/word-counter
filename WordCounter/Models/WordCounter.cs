@@ -19,7 +19,7 @@ namespace WordCounter.Models
     //methodsssss
     public string GetWord()
     {
-      return "hello";
+      return _word;
     }
 
   }
