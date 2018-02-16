@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using WordCounter.Models;
 
 namespace WordCounter.Tests
@@ -118,6 +119,22 @@ namespace WordCounter.Tests
 
         //assert
         Assert.AreEqual(result, controlMessage);
+    }
+
+    [TestMethod]
+    public void GetAll_FetchAllCounters_List()
+    {
+        //arrange
+        RepeatCounter catCounter = new RepeatCounter("cat", "the cat and the dog are great");
+        RepeatCounter dogCounter = new RepeatCounter("dog", "the cat and the dog are great");
+        RepeatCounter theCounter = new RepeatCounter("the", "the cat and the dog are great");
+        List<RepeatCounter> controlList = new List<RepeatCounter>{catCounter, dogCounter, theCounter};
+
+        //act
+        List<RepeatCounter> result = RepeatCounter.GetAll();
+
+        //assert
+        Assert.AreEqual(result, controlList);
     }
   }
 }
