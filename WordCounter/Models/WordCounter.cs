@@ -5,25 +5,25 @@ namespace WordCounter.Models
 {
   public class RepeatCounter
   {
-    private string _word;
-    private string _sentence;
-    private int _count;
+        private string _word;
+        private string _sentence;
+        private int _count;
 
     public RepeatCounter(string word, string sentence)
     {
-      _word = word;
-      _sentence = sentence;
-      _count = 2;
+        _word = word;
+        _sentence = sentence;
+        _count = 2;
     }
 
     public string GetWord()
     {
-      return _word;
+        return _word;
     }
 
     public void SetWord(string newWord)
     {
-      _word = newWord;
+        _word = newWord;
     }
 
     public string GetSentence()
@@ -41,5 +41,10 @@ namespace WordCounter.Models
         return _count;
     }
 
+    public void SetCount()
+    {
+
+        _count = 55;
+    }
   }
 }
