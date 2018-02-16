@@ -45,7 +45,7 @@ namespace WordCounter.Models
 
     public string GetMessage()
     {
-        return "hello";
+        return _message;
     }
 
     public bool IsValid()
