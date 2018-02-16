@@ -12,7 +12,7 @@ namespace WordCounter.Tests
     {
       //arrange
       string controlWord = "cat";
-      RepeatCounter newCounter = new RepeatCounter("cat");
+      RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
 
       //act
       string result = newCounter.GetWord();
@@ -26,13 +26,28 @@ namespace WordCounter.Tests
     {
       //arrange
       string controlWord = "bat";
-      RepeatCounter newCounter = new RepeatCounter("cat");
+      RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
 
       //act
       newCounter.SetWord(controlWord);
 
       //assert
       Assert.AreEqual(controlWord, newCounter.GetWord());
+    }
+
+    [TestMethod]
+    public void GetSentence_FetchTheSentence_String()
+    {
+      //arrange
+      string controlSentence = "There is a cat over there. It is a big cat that I will pet.";
+      RepeatCounter newCounter = new RepeatCounter("cat", "There is a cat over there. It is a big cat that I will pet.");
+
+      //act
+      string result = newCounter.GetSentence();
+
+      //assert
+      Assert.AreEqual(result, controlSentence);
+
     }
   }
 }

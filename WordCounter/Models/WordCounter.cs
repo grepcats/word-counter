@@ -6,17 +6,16 @@ namespace WordCounter.Models
   public class RepeatCounter
   {
     private string _word;
-    // private string _sentence;
+    private string _sentence;
     // private int _count;
 
-    public RepeatCounter(string word)
+    public RepeatCounter(string word, string sentence)
     {
       _word = word;
-      // _sentence = sentence;
+      _sentence = sentence;
       // _count = 0;
     }
 
-    //methodsssss
     public string GetWord()
     {
       return _word;
@@ -25,6 +24,11 @@ namespace WordCounter.Models
     public void SetWord(string newWord)
     {
       _word = newWord;
+    }
+
+    public string GetSentence()
+    {
+      return "hello";
     }
 
   }
