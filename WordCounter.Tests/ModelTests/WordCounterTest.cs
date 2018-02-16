@@ -20,5 +20,19 @@ namespace WordCounter.Tests
       //assert
       Assert.AreEqual(result, controlWord);
     }
+
+    [TestMethod]
+    public void SetWord_SetTheWord_Void()
+    {
+      //arrange
+      string controlWord = "bat";
+      RepeatCounter newCounter = new RepeatCounter("cat");
+
+      //act
+      newCounter.SetWord(controlWord);
+
+      //assert
+      Assert.AreEqual(controlWord, newCounter.GetWord());
+    }
   }
 }
