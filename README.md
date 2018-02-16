@@ -36,16 +36,16 @@ This is a C#/ASP.NET app that will take user-provided words and count the number
   * Output: 2
   * Program should be able to take the word input and identify it in the sentence input regardless of punctuation in the input sentence. This is an appropriate test because it includes punctuation in the sentence input that has the potential for non-matches.
 
----Tests & Methods for these added after development began
+#### Tests & Methods for these added after development began
 * Program should convey message to user if they have entered non-conforming entries like multiple words in word input
   * Input: "cat cat cat", "There is a CaT over there. It is a big cat."
-  * Output: "Please enter a single word"
+  * Output: "Please enter one word per Word Box! Click 'Add another word' to count more words"
   * Because program is looking for matches on single words in the sentence array, a "word" entry that is multiple words (like the input above) will always fail. The program should let the user know this is happening. Message setting functionality was added to the IsValid method.
 
 * Program should offer users the option to enter multiple words to count
     * Input: "cat"; "dog"; "the"; "the cat and the dog are great"
     * Output: cat: 1; dog: 1; the: 2;
-    * This changes the structure of the program somewhat. Adding GetAll() and ClearAll() methods, as well as a static list. It will also change the form and the object passed to the Index page.
+    * This changes the structure of the program somewhat. Adding GetAll() and ClearAll() methods, as well as a static list. It will also change the form and the object passed to the Index page. The object test has been updated.
 
 ## Setup/Installation instructions
 In terminal,
