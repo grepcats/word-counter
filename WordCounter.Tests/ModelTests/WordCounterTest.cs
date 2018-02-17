@@ -114,7 +114,7 @@ namespace WordCounter.Tests
     public void GetMessage_FetchTheMessage_String()
     {
         //arrange
-        string controlMessage = "Please enter a single word. Multiple-word inputs are not valid.";
+        string controlMessage = "Please enter one word per Word Box! Click 'Add another word' to count more words";
         RepeatCounter newCounter = new RepeatCounter("cat cat", "There is a cat over there.");
         newCounter.IsValid();
 

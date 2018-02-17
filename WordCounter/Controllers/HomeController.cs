@@ -40,6 +40,5 @@ namespace WordCounter.Controllers
             List<RepeatCounter> allCounters = RepeatCounter.GetAll();
             return View("Index", allCounters);
         }
-
     }
 }
