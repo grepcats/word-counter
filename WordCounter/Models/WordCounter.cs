@@ -49,6 +49,7 @@ namespace WordCounter.Models
         if (_word == "")
         {
             _message = "You left this word blank!";
+            return false;
         }
         if (_word.Contains(" "))
         {
